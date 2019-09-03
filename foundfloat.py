@@ -6,7 +6,7 @@ class TestFoundFloat(unittest.TestCase):
     def test_found_float_equal(self):
         self.assertEqual(found_float(5.5, [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]), 5.5)
 
-    # Check that we are finding the correct value when the whole number matches without a decimal.
+    # Check that we are finding the correct value when the whole number matches but not the decimal.
     def test_found_float_not_equal_decimal(self):
         self.assertNotEqual(found_float(5.5, [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]), 5.6)
 
