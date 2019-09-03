@@ -29,10 +29,6 @@ def longestCommSubStr(str1, str2):
                 # Our temporary longest common substring is equal to its current value plus the matched letter.
                 temp_lcs += str2[j + pos]
 
-                # 
-                if str1[i + pos] == str2[j + pos]:
-                    exit
-
                 # We set the position to the next position 
                 pos += 1
                 
