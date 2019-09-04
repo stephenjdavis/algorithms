@@ -3,11 +3,11 @@ import unittest
 
 class TestRevereString(unittest.TestCase):
 
-    # Check that the return string appears in the correct reverse order.
+    # Check that the return string is in the correct reverse order.
     def test_is_equal(self):
         self.assertEqual(reverse_string('abcdefg6'), '6gfedcba')
 
-    # Check that the returned string appears is not in the correct reverse order.
+    # Check that the returned string is not in the correct reverse order.
     def test_is_not_equal(self):
         self.assertIsNot(reverse_string('abcdefg'), 'abcdefg')
 
@@ -15,7 +15,7 @@ class TestRevereString(unittest.TestCase):
     def test_upper_case(self):
         self.assertEqual(reverse_string('abcDeFg'), 'gfedcba')
     
-    # Check that number strings are correctly treated as strings within the function.
+    # Check that numbers in strings are correctly treated as strings within the function.
     def test_numbers_as_strings(self):
         self.assertEqual(reverse_string('123456'), '654321')
 
@@ -23,10 +23,7 @@ class TestRevereString(unittest.TestCase):
     def test_raise(self):
         with self.assertRaises(ValueError): reverse_string('')
 
-
 def reverse_string(string_a): 
-    '''We already know that we can trust the string from the caller, so we don't
-    need to do any checking for a non-zero-terminated string.'''
     
     # Raise an error for an empty string.
     if (string_a == ''):
