@@ -1,12 +1,11 @@
 import unittest
-import sys
 
 
 class TestRevereString(unittest.TestCase):
 
     # Check that the return string appears in the correct reverse order.
     def test_is_equal(self):
-        self.assertEqual(reverse_string('abcdefg'), 'gfedcba')
+        self.assertEqual(reverse_string('abcdefg6'), '6gfedcba')
 
     # Check that the returned string appears is not in the correct reverse order.
     def test_is_not_equal(self):
@@ -20,16 +19,26 @@ class TestRevereString(unittest.TestCase):
     def test_numbers_as_strings(self):
         self.assertEqual(reverse_string('123456'), '654321')
 
+    # Check that we raise the correct error if an empty string is passed.
+    def test_raise(self):
+        with self.assertRaises(ValueError): reverse_string('')
+
 
 def reverse_string(string_a): 
     '''We already know that we can trust the string from the caller, so we don't
     need to do any checking for a non-zero-terminated string.'''
-    # Convert the string into a list of characters so that we can use an index.
+    
+    # Raise an error for an empty string.
+    if (string_a == ''):
+        raise ValueError('String cannot be empty.')
+
+    # Ensure we are only comparing lowercase characters
     str_lower = string_a.lower()
+    # Convert the string into a list of characters so that we can use an index.
     x = list(str_lower)
     # Create an index variable for the first character item.
     start = 0
-    #Create an index variable for the last character item.
+    # Create an index variable for the last character item.
     end = len(x) - 1
     
     # Swap items at the start and end positions until we meet in the middle, meaning all character items have been swapped.
