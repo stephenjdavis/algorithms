@@ -20,7 +20,7 @@ class TestNodeGraph(unittest.TestCase):
 class Node:
     def __init__(self, data): 
         # Value of the node.
-        self.data = data # Found in the graph map as the.
+        self.data = data # Found in the graph map as the key.
         self.edges = None # Found in the graph as the values for the key.
         return
 
