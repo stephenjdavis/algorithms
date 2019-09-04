@@ -24,14 +24,21 @@ def found_float(f, arr):
         rp = len(arr);
         
         for i in range(rp):
+            # We set a mid point by adding the left and right point index values and dividing by 2.
+            # We must round this number because we need a whole number for our index.
             mp = round((lp + rp) / 2);
 
+            # If the value at the midpoint is what we are looking for, return that value.
             if (arr[mp] == f):
                 return f;
 
+            # If our mid point is less than the sought value, move the left position one position
+            # to the right of the mid point.
             if (arr[mp] < f):
                 lp = mp + 1;
 
+            # If our midpoint is greater than the sought value, move the right position one position
+            # to the left of the midpoint.
             if (arr[mp] > f):
                 rp = mp - 1;
             
