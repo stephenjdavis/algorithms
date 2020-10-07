@@ -14,7 +14,7 @@ class ReverseInteger {
             if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) {
                 return 0;
             }
-            // Replacing the power of 10 we remove each time and add the popper number.
+            // Replace the power of 10 we remove each time and add the popped number.
             rev = rev * 10 + pop;
         }
         return rev;
