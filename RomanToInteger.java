@@ -10,7 +10,7 @@ class RomanToInteger {
         map.put("D", new Integer(500));
         map.put("M", new Integer(1000));
         
-        // Create a string array so that we can use each character as a key.
+        // Create a String array so that we can use each character as a key.
         // Whe can't index the string itself, because the map won't find a char as a key reference.
         String[] string = s.split("");
         
